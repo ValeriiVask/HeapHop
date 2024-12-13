@@ -93,9 +93,20 @@ public:
 		return table[0];
 	}
 
-	void pop()
+		void pop() {
 	{
-		//TODO Implement `Heap` `pop` methods that removes the key value pair with the greatest key value (root of the heap)
+		if (empty()) {
+				throw std::runtime_error("Pop from an empty heap.");
+			}
+
+			table[0] = table.back();
+			table.pop_back();
+
+			if (!empty()) {
+				heapify(0);
+			}
+		}
+
 
 	}
 
